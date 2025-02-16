@@ -1,0 +1,34 @@
+{
+	"name": "UTDRTweaks",
+	"version": "1.0.0",
+	"author": [
+		"[https://kocka.tech/ Luka Simić]"
+	],
+	"url": "https://undertale.wiki/",
+	"descriptionmsg": "utdr-desc",
+	"license-name": "MIT",
+	"type": "other",
+	"MessagesDirs": {
+		"UTDRTweaks": [
+			"i18n"
+		]
+	},
+	"requires": {
+		"MediaWiki": ">= 1.43.0"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\UTDRTweaks\\": "includes/"
+	},
+	"Hooks": {
+		"BeforeCreateEchoEvent": "echo"
+	},
+	"HookHandlers": {
+		"echo": {
+			"class": "MediaWiki\\Extension\\UTDRTweaks\\Hooks"
+		}
+	},
+	"config_prefix": "wgUTDR",
+	"config": {
+	},
+	"manifest_version": 2
+}

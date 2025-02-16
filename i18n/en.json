@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Luka Simić"
+		]
+	},
+	"utdr-desc": "Tweaks to MediaWiki for the Undertale and Deltarune wikis.",
+	"grouppage-content-moderator": "Project:Staff#Moderators",
+	"group-content-moderator": "Moderators",
+	"group-content-moderator-member": "moderator",
+	"grouppage-site-admin": "Project:Staff#Site administrators",
+	"group-site-admin": "Site administrators",
+	"group-site-admin-member": "site administrator",
+	"grouppage-trusted": "Project:Users#Trusted users",
+	"group-trusted": "Trusted users",
+	"group-trusted-member": "trusted user"
+}
