@@ -2,6 +2,8 @@
 namespace MediaWiki\Extension\UTDRTweaks;
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Html\Html;
+use Skin;
 
 class Hooks {
 	/**
@@ -41,5 +43,24 @@ class Hooks {
 			'id' => 'wpTos',
 			'required' => true,
 		];
+	}
+
+	/**
+	 * Replace footer with only Terms of Service and Privacy Policy links.
+	 * @param Skin $skin Skin object
+	 * @param string $key Key of the footer link
+	 * @param array $footerlinks Array of footer links
+	 */
+	public static function onSkinAddFooterLinks( Skin $skin, string $key, array &$footerlinks ): void {
+		if ( $key === 'places' ) {
+			$footerlinks = [
+				'terms-of-service' => Html::element( 'a', [
+					'href' => 'https://undertale.wiki/w/Undertale_Wiki:Terms_of_Service',
+				], $skin->msg( 'utdr-terms-of-service' )->text() ),
+				'privacy-policy' => Html::element( 'a', [
+					'href' => 'https://undertale.wiki/w/Undertale_Wiki:Privacy_Policy',
+				], $skin->msg( 'utdr-privacy-policy' )->text() ),
+			];
+		}
 	}
 }

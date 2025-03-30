@@ -6,6 +6,8 @@
 	},
 	"utdr-desc": "Tweaks to MediaWiki for the Undertale and Deltarune wikis.",
 	"utdr-accept-tos": "<span>I am over 13 years of age and I agree to the [[meta:Terms of Service|Terms of Service]] and [[meta:Privacy Policy|Privacy Policy]].</span>",
+	"utdr-terms-of-service": "Terms of Service",
+	"utdr-privacy-policy": "Privacy Policy",
 	"grouppage-content-moderator": "Project:Staff#Moderators",
 	"group-content-moderator": "Moderators",
 	"group-content-moderator-member": "moderator",

@@ -21,7 +21,8 @@
 	},
 	"Hooks": {
 		"AuthChangeFormFields": "main",
-		"BeforeCreateEchoEvent": "main"
+		"BeforeCreateEchoEvent": "main",
+		"SkinAddFooterLinks": "main"
 	},
 	"HookHandlers": {
 		"main": {
