@@ -20,10 +20,11 @@
 		"MediaWiki\\Extension\\UTDRTweaks\\": "includes/"
 	},
 	"Hooks": {
-		"BeforeCreateEchoEvent": "echo"
+		"AuthChangeFormFields": "main",
+		"BeforeCreateEchoEvent": "main"
 	},
 	"HookHandlers": {
-		"echo": {
+		"main": {
 			"class": "MediaWiki\\Extension\\UTDRTweaks\\Hooks"
 		}
 	},
