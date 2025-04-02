@@ -4,8 +4,13 @@
 			"Luka Simić"
 		]
 	},
+	"analyticsoptout": "Opt out of analytics",
 	"utdr-desc": "Tweaks to MediaWiki for the Undertale and Deltarune wikis.",
 	"utdr-accept-tos": "<span>I am over 13 years of age and I agree to the [[meta:Terms of Service|Terms of Service]] and [[meta:Privacy Policy|Privacy Policy]].</span>",
+	"utdr-optout": "I want to opt out of my data being collected for analytics purposes.",
+	"utdr-optout-error": "There was an error updating your analytics preferences. If you are using content blockers to block our analytics script, that's great! You're already opted out by the virtue of our analytics never loading on your device. But if you wish that your opt out is more explicit, please disable your content blocker and try updating your preference again.",
+	"utdr-optout-success": "You have successfully updated your analytics preferences.",
+	"utdr-optout-message": "You can use this checkbox to opt out of your data being collected for analytics purposes. Analytics help us determine how users use our website and prioritize editing and development efforts, but we completely understand if you want to opt out. You can change this setting at any time.\n\nIf you have a content blocker blocking our analytics script, opting out using this form will not work. However, that means that you're already, implicitly, opted out.\n\n'''Opting out of analytics on Undertale Wiki does not [[dr:Special:AnalyticsOptOut|opt you out of analytics on Deltarune Wiki]], and vice versa. You need to opt out on each wiki separately.'''",
 	"utdr-terms-of-service": "Terms of Service",
 	"utdr-privacy-policy": "Privacy Policy",
 	"grouppage-content-moderator": "Project:Staff#Moderators",

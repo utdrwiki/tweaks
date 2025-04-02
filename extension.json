@@ -19,6 +19,26 @@
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\UTDRTweaks\\": "includes/"
 	},
+	"SpecialPages": {
+		"AnalyticsOptOut": {
+			"class": "MediaWiki\\Extension\\UTDRTweaks\\Special\\AnalyticsOptOut"
+		}
+	},
+	"ResourceModules": {
+		"ext.utdrtweaks.optout.scripts": {
+			"scripts": [
+				"ext.utdrtweaks.optout.js"
+			],
+			"messages": [
+				"utdr-optout-error",
+				"utdr-optout-success"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "UTDRTweaks/resources"
+	},
 	"Hooks": {
 		"AuthChangeFormFields": "main",
 		"BeforeCreateEchoEvent": "main",
