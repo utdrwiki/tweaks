@@ -2,10 +2,14 @@
 namespace MediaWiki\Extension\UTDRTweaks;
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Hook\ImageBeforeProduceHTMLHook;
 use MediaWiki\Html\Html;
+use MediaWiki\Parser\Parser;
+use MediaWiki\Title\Title;
 use Skin;
+use File;
 
-class Hooks {
+class Hooks implements ImageBeforeProduceHTMLHook {
 	/**
 	 * Moves all notifications to the 'alert' section, because our skin only
 	 * displays that section.
@@ -62,5 +66,30 @@ class Hooks {
 				], $skin->msg( 'utdr-privacy-policy' )->text() ),
 			];
 		}
+	}
+
+	
+
+	/**
+	 * Fall back to a file's page title whenever an alt text is missing.
+	 * @param null $unused Will always be null
+	 * @param Title &$title Title object of the image
+	 * @param File|false &$file File object, or false if it doesn't exist
+	 * @param array &$frameParams Various parameters with special meanings; see documentation in
+	 *   includes/Linker.php for Linker::makeImageLink
+	 * @param array &$handlerParams Various parameters with special meanings; see documentation in
+	 *   includes/Linker.php for Linker::makeImageLink
+	 * @param string|bool &$time Timestamp of file in 'YYYYMMDDHHIISS' string
+	 *   form, or false for current
+	 * @param string &$res Final HTML output, used if you return false
+	 * @param Parser $parser
+	 * @param string &$query Query params for desc URL
+	 * @param string &$widthOption Used by the parser to remember the user preference thumbnailsize
+	 */
+	public function onImageBeforeProduceHTML( $unused, &$title, &$file,
+		&$frameParams, &$handlerParams, &$time, &$res, $parser, &$query, &$widthOption ): void {
+			if (!$frameParams['alt']) {
+				$frameParams['alt'] = $file->getTitle()->getText();
+			}
 	}
 }
