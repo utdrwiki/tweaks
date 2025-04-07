@@ -88,8 +88,9 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 	 */
 	public function onImageBeforeProduceHTML( $unused, &$title, &$file,
 		&$frameParams, &$handlerParams, &$time, &$res, $parser, &$query, &$widthOption ): void {
-			if (!$frameParams['alt']) {
-				$frameParams['alt'] = $file->getTitle()->getText();
+			if (!$frameParams['alt'] && $file) {
+				$title = $file->getTitle();
+				$frameParams['alt'] = $title ? $title->getText() : "";
 			}
 	}
 }
