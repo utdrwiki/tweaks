@@ -43,7 +43,8 @@
 		"AuthChangeFormFields": "main",
 		"BeforeCreateEchoEvent": "main",
 		"SkinAddFooterLinks": "main",
-		"ImageBeforeProduceHTML": "main"
+		"ImageBeforeProduceHTML": "main",
+		"SelfLinkBegin": "main"
 	},
 	"HookHandlers": {
 		"main": {
