@@ -42,7 +42,8 @@
 	"Hooks": {
 		"AuthChangeFormFields": "main",
 		"BeforeCreateEchoEvent": "main",
-		"SkinAddFooterLinks": "main"
+		"SkinAddFooterLinks": "main",
+		"ImageBeforeProduceHTML": "main"
 	},
 	"HookHandlers": {
 		"main": {
@@ -50,7 +51,6 @@
 		}
 	},
 	"config_prefix": "wgUTDR",
-	"config": {
-	},
+	"config": {},
 	"manifest_version": 2
 }
