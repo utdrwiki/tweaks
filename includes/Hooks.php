@@ -88,10 +88,13 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 	 */
 	public function onImageBeforeProduceHTML( $unused, &$title, &$file,
 		&$frameParams, &$handlerParams, &$time, &$res, $parser, &$query, &$widthOption ): void {
-			if ( empty( $frameParams['alt'] ) && $file) {
-				$title = $file->getTitle();
-				$frameParams['alt'] = $title ? $title->getText() : "";
-			}
+		if ( empty( $frameParams['alt'] ) && $file ) {
+			$title = $file->getTitle();
+			$frameParams['alt'] = $title ? $title->getText() : "";
+		}
+		if ( empty( $frameParams['caption'] ) ) {
+			$parser->addTrackingCategory( 'utdr-category-pages-without-captions' );
+		}
 	}
 
 	  /**

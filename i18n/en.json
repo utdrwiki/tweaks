@@ -5,6 +5,8 @@
 		]
 	},
 	"analyticsoptout": "Opt out of analytics",
+	"utdr-category-pages-without-captions": "Pages with missing file captions",
+	"utdr-category-pages-without-captions-desc": "These pages include files whose captions are not set, either in galleries or separately. See [[mw:Special:MyLanguage/Help:Images|the help page on images]] to see how to add captions to these files.",
 	"utdr-desc": "Tweaks to MediaWiki for the Undertale and Deltarune wikis.",
 	"utdr-accept-tos": "<span>I am over 13 years of age and I agree to the [[meta:Terms of Service|Terms of Service]] and [[meta:Privacy Policy|Privacy Policy]].</span>",
 	"utdr-optout": "I want to opt out of my data being collected for analytics purposes.",
