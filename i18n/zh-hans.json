@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Luka Simić",
+			"Kumki"
+		]
+	},
+	"analyticsoptout": "退出数据统计",
+	"utdr-category-pages-without-captions": "未添加说明的页面",
+	"utdr-category-pages-without-captions-desc": "这些页面中包含了未添加说明的文件，可能出现在图片库或是单独插入时。请参考 [[mw:Special:MyLanguage/Help:Images|图像使用帮助]] 学习如何添加说明。",
+	"utdr-desc": "用于优化 Undertale 和 Deltarune Wiki 的 MediaWiki 扩展。",
+	"utdr-accept-tos": "<span>我已年满 13 岁，并同意 [[meta:Terms of Service|服务条款]] 和 [[meta:Privacy Policy|隐私政策]]。</span>",
+	"utdr-optout": "我希望退出数据收集与分析。",
+	"utdr-optout-error": "更新数据偏好时出错。如果你使用了内容屏蔽插件屏蔽了我们的分析脚本，那很好！说明你的设备本身没有加载分析功能，等同已退出。但如果你希望明确表示退出，请暂时关闭屏蔽插件再试一次。",
+	"utdr-optout-success": "你已成功更新了数据分析偏好设置。",
+	"utdr-optout-message": "你可以使用此选项选择退出我们对你数据的收集。我们通过数据分析了解用户如何使用网站，从而优化内容和开发方向。当然，我们完全理解你不想参与分析的决定，你可以随时更改此设置。\n\n如果你已经使用内容屏蔽插件阻止了分析脚本的加载，该设置将无法生效。不过这也意味着你已经自动退出了。\n\n'''在 Undertale Wiki 上退出数据分析，并不会自动同步到 [[dr:Special:AnalyticsOptOut|Deltarune Wiki]]，两个网站需要分别设置。'''",
+	"utdr-terms-of-service": "服务条款",
+	"utdr-privacy-policy": "隐私政策",
+	"grouppage-content-moderator": "Project:Staff#内容管理员",
+	"group-content-moderator": "内容管理员",
+	"group-content-moderator-member": "内容管理员",
+	"grouppage-site-admin": "Project:Staff#站点管理员",
+	"group-site-admin": "站点管理员",
+	"group-site-admin-member": "站点管理员",
+	"grouppage-trusted": "Project:Users#受信用户",
+	"group-trusted": "受信用户",
+	"group-trusted-member": "受信用户"
+}
