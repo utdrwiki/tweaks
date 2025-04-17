@@ -1,0 +1,26 @@
+{
+  "@metadata": {
+    "authors": "Luka Simić",
+							"Kumki"
+  },
+  "analyticsoptout": "退出分析追蹤",
+  "utdr-category-pages-without-captions": "缺少檔案說明的頁面",
+  "utdr-category-pages-without-captions-desc": "這些頁面包含沒有設定說明的檔案，可能出現在圖庫或是個別插入時。請參閱 [[mw:Special:MyLanguage/Help:Images|影像說明文件]]，了解如何為這些檔案新增說明文字。",
+  "utdr-desc": "為 Undertale 與 Deltarune Wiki 所設的 MediaWiki 調整。",
+  "utdr-accept-tos": "<span>我已年滿 13 歲，並同意 [[meta:Terms of Service|服務條款]] 與 [[meta:Privacy Policy|隱私權政策]]。</span>",
+  "utdr-optout": "我希望退出資料收集與分析。",
+  "utdr-optout-error": "更新你的分析偏好時發生錯誤。如果你使用內容阻擋器擋住了我們的分析腳本，太棒了！這代表你的裝置從未載入分析工具，等於已隱性退出。但如果你希望明確地表達退出意願，請暫時停用內容阻擋器後再試一次。",
+  "utdr-optout-success": "你已成功更新你的分析偏好設定。",
+  "utdr-optout-message": "你可以透過此選項退出資料分析的收集。我們進行分析是為了了解使用者如何使用網站、以利編輯與開發工作的安排；不過我們完全理解你想退出的理由，你可以隨時更改此設定。\n\n如果你使用內容阻擋器擋掉了分析腳本，那麼這個設定將無法生效。不過這也代表你已經實際上退出了。\n\n'''在 Undertale Wiki 退出分析追蹤，不會同時影響 [[dr:Special:AnalyticsOptOut|Deltarune Wiki]]，反之亦然。你需要在每個 Wiki 分別設定。'''",
+  "utdr-terms-of-service": "服務條款",
+  "utdr-privacy-policy": "隱私權政策",
+  "grouppage-content-moderator": "Project:Staff#版主",
+  "group-content-moderator": "版主",
+  "group-content-moderator-member": "版主",
+  "grouppage-site-admin": "Project:Staff#網站管理員",
+  "group-site-admin": "網站管理員",
+  "group-site-admin-member": "網站管理員",
+  "grouppage-trusted": "Project:Users#信任用戶",
+  "group-trusted": "信任用戶",
+  "group-trusted-member": "信任用戶"
+}
