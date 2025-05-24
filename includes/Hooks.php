@@ -10,6 +10,12 @@ use Skin;
 use File;
 
 class Hooks implements ImageBeforeProduceHTMLHook {
+	private const CAPTION_REQUIRED_MEDIA_TYPES = [
+		MEDIATYPE_BITMAP,
+		MEDIATYPE_DRAWING,
+		MEDIATYPE_VIDEO,
+	];
+
 	/**
 	 * Moves all notifications to the 'alert' section, because our skin only
 	 * displays that section.
@@ -68,8 +74,6 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 		}
 	}
 
-	
-
 	/**
 	 * Fall back to a file's page title whenever an alt text is missing.
 	 * @param null $unused Will always be null
@@ -92,7 +96,11 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 			$title = $file->getTitle();
 			$frameParams['alt'] = $title ? $title->getText() : "";
 		}
-		if ( empty( $frameParams['caption'] ) ) {
+		if (
+			empty( $frameParams['caption'] ) &&
+			$file &&
+			in_array( $file->getMediaType(), self::CAPTION_REQUIRED_MEDIA_TYPES )
+		) {
 			$parser->addTrackingCategory( 'utdr-category-pages-without-captions' );
 		}
 	}
