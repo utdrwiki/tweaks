@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Luka Simić",
+			"Cacagibin"
+		]
+	},
+	"analyticsoptout": "Desativar análise",
+	"utdr-category-pages-without-captions": "Páginas com legendas de imagens faltando",
+	"utdr-category-pages-without-captions-desc": "Estas páginas incluem arquivos cujas legendas não estão ativadas, seja nas galerias ou separadamente. Veja a [[mw:Special:MyLanguage/Help:Images|página de ajuda para imagens]] para ver como adicionar legendas a esses arquivos.",
+	"utdr-desc": "Ajustes na MediaWiki para as wikis de Undertale e Deltarune.",
+	"utdr-accept-tos": "<span>Eu tenho mais de 13 anos de idade e concordo com os [[meta:Terms of Service|Termos de Serviço]] e [[meta:Política de Privacidade|Política de Privacidade]].</span>",
+	"utdr-optout": "Desejo desativar a coleta de meus dados para fins analíticos.",
+	"utdr-optout-error": "Houve um erro em atualizar suas preferências de análise. Se você está usando bloquadores de conteúdo para bloquear nosso script de análise, isso é bom! Você já optou por não participar porque nossas análises nunca carregam em seu dispositivo. Mas se você deseja que sua opção de exclusão seja mais explícita, por favor desative seu bloqueador de conteúdo e tente atalizar suas preferências novamente.",
+	"utdr-optout-success": "Você atualizou suas preferências de análise com sucesso.",
+	"utdr-optout-message": "Você pode usar essa caixa de seleção para cancelar a coleta de seus dados para fins analíticos. As análises nos ajudam a determinar como usuários usam nosso site e priorizar esforços em edição e desenvolvimento, mas nós compreendemos se você não quiser participar. Você pode mudar essa configuração a qualquer momento.\n\nSe você possuir um bloqueador de conteúdo para bloquear nosso script de análise, desativar esse formulário não funcionará. Porém, isso significa que você já o desativou, ainda que de maneira indireta.\n\n'''Desativar as análises na Undertale Wiki não [[dr:Special:AnalyticsOptOut|desativa as análises na Deltarune Wiki]], ou vice versa. Você precisa desativá-las em cada wiki individualmente.'''",
+	"utdr-terms-of-service": "Termos de Serviço",
+	"utdr-privacy-policy": "Política de Privacidade",
+	"grouppage-content-moderator": "Project:Staff#Moderadores",
+	"group-content-moderator": "Moderadores",
+	"group-content-moderator-member": "moderador",
+	"grouppage-site-admin": "Project:Staff#Administradores do site",
+	"group-site-admin": "Administradores do site",
+	"group-site-admin-member": "Administradores do site",
+	"grouppage-trusted": "Project:Users#Usuários confiáveis",
+	"group-trusted": "Usuários confiáveis",
+	"group-trusted-member": "usuários confiáveis"
+}
