@@ -39,6 +39,9 @@
 		"localBasePath": "resources",
 		"remoteExtPath": "UTDRTweaks/resources"
 	},
+	"ExtensionFunctions": [
+		"MediaWiki\\Extension\\UTDRTweaks\\Hooks::initTweaks"
+	],
 	"Hooks": {
 		"AuthChangeFormFields": "main",
 		"BeforeCreateEchoEvent": "main",

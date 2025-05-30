@@ -17,6 +17,15 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 	];
 
 	/**
+	 * Updates the WebP media handler to allow animated WebP images.
+	 * @return void
+	 */
+	public static function initTweaks(): void {
+		global $wgMediaHandlers;
+		$wgMediaHandlers[ 'image/webp' ] = 'MediaWiki\\Extension\\UTDRTweaks\\MediaHandler\\UTDRWebPHandler';
+	}
+
+	/**
 	 * Moves all notifications to the 'alert' section, because our skin only
 	 * displays that section.
 	 * @param array $notifications Value of $wgEchoNotifications
