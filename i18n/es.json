@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Luka Simić",
+            "Aexhell"
+		]
+	},
+	"analyticsoptout": "Darse de baja de analíticas",
+	"utdr-category-pages-without-captions": "Páginas con archivos sin leyenda",
+	"utdr-category-pages-without-captions-desc": "Estas páginas incluyen archivos cuyos títulos no están definidos, ni en galerías ni por separado. Visita [[mw:Special:MyLanguage/Help:Images/es|la página de ayuda sobre Imágenes]] para ver cómo agregar leyendas a estos archivos.",
+	"utdr-desc": "Ajustes a MediaWiki para las wikis de Undertale y Deltarune.",
+	"utdr-accept-tos": "<span>Tengo más de 13 años de edad y acepto los [[meta:Terms of Service|Términos de Servicio]] y la [[meta:Privacy Policy|Política de Privacidad]].</span>",
+	"utdr-optout": "Quiero darme de baja de la recolección de mis datos para fines analíticos.",
+	"utdr-optout-error": "Ha ocurrido un error al actualizar tus preferencias de análisis. Si estás usando bloqueadores de contenido para bloquear nuestro script de análisis, ¡genial! Ya te has dado de baja, ya que nuestros análisis nunca se cargan en tu dispositivo. Pero si deseas que tu baja sea más explícita, desactiva tu bloqueador de contenido e intenta actualizar tus preferencias de nuevo.",
+	"utdr-optout-success": "Has actualizado correctamente tus preferencias de analíticas.",
+	"utdr-optout-message": "Puedes usar esta casilla para desactivar la recopilación de tus datos con fines analíticos. Las analíticas nos ayudan a determinar cómo los usuarios usan nuestro sitio web y a priorizar los esfuerzos de edición y desarrollo, pero lo entendemos perfectamente si deseas desactivar esta opción. Puedes cambiar esta configuración en cualquier momento. Si tienes un bloqueador de contenido que bloquea nuestro script de analíticas, desactivar esta opción con este formulario no funcionará. Sin embargo, eso significa que indirectamente ya te has dado de baja.\n\n'''Darte de baja en Undertale Wiki no te [[dr:Special:AnalyticsOptOut|da de baja en Deltarune Wiki]] y viceversa. Debes darte de baja en cada wiki por separado.'''",
+	"utdr-terms-of-service": "Términos de Servicio",
+	"utdr-privacy-policy": "Política de Privacidad",
+	"grouppage-content-moderator": "Proyecto:Staff#Moderadores",
+	"group-content-moderator": "Moderadores",
+	"group-content-moderator-member": "moderador",
+	"grouppage-site-admin": "Proyecto:Staff#Administradores del sitio",
+	"group-site-admin": "Administradores del sitio",
+	"group-site-admin-member": "administrador del sitio",
+	"grouppage-trusted": "Proyecto:Usuarios#Usuarios de confianza",
+	"group-trusted": "Usuarios de confianza",
+	"group-trusted-member": "usuario de confianza"
+}
