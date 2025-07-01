@@ -154,4 +154,18 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 	public static function onWantedPages__getQueryInfo( &$wantedPages, &$query ) {
 		$query['conds'][] = 'lt_namespace % 2 = 0';
 	}
+
+	/**
+	 * Turn more URLs into fancy URLs.
+	 * Taken from GloopTweaks, by TehKittyCat and Jayden.
+	 */
+	public static function onGetLocalURL( $title, &$url, $query ) {
+		global $wgArticlePath, $wgScript, $wgScriptPath;
+		$dbkey = wfUrlencode( $title->getPrefixedDBkey() );
+		if ( $title->isMainPage() ) {
+			$url = wfAppendQuery( $wgScriptPath . '/', $query );
+		} elseif ( $url == "{$wgScript}?title={$dbkey}&{$query}" ) {
+			$url = wfAppendQuery( str_replace( '$1', $dbkey, $wgArticlePath ), $query );
+		}
+	}
 }
