@@ -130,4 +130,18 @@ class Hooks implements ImageBeforeProduceHTMLHook {
         ], $prefix . $html ) . $trail;
         return false;
     }
+
+
+	/**
+	 * Marks user pages and talk pages as always known, so that they show up
+	 * as blue links instead of red links.
+	 * @param \MediaWiki\Title\Title $title Title object that is being checked
+	 * @param bool|null &$isKnown Whether MediaWiki currently thinks this page is known
+	 * @return bool|void True or no return value to continue or false to abort
+	 */
+	public static function onTitleIsAlwaysKnown( $title, &$isKnown ) {
+		if ( $title->isTalkPage() || $title->inNamespace( NS_USER ) ) {
+			$isKnown = true;
+		}
+	}
 }

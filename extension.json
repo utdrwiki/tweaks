@@ -47,7 +47,8 @@
 		"BeforeCreateEchoEvent": "main",
 		"SkinAddFooterLinks": "main",
 		"ImageBeforeProduceHTML": "main",
-		"SelfLinkBegin": "main"
+		"SelfLinkBegin": "main",
+		"TitleIsAlwaysKnown": "main"
 	},
 	"HookHandlers": {
 		"main": {
