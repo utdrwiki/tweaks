@@ -144,4 +144,14 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 			$isKnown = true;
 		}
 	}
+
+	/**
+	 * Don't count talk pages as wanted.
+	 * @param \MediaWiki\Specials\SpecialWantedPages $wantedPages
+	 * @param array &$query Query array. See QueryPage::getQueryInfo() for format documentation.
+	 * @return bool|void True or no return value to continue or false to abort
+	 */
+	public static function onWantedPages__getQueryInfo( &$wantedPages, &$query ) {
+		$query['conds'][] = 'lt_namespace % 2 = 0';
+	}
 }

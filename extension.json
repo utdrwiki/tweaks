@@ -48,7 +48,8 @@
 		"SkinAddFooterLinks": "main",
 		"ImageBeforeProduceHTML": "main",
 		"SelfLinkBegin": "main",
-		"TitleIsAlwaysKnown": "main"
+		"TitleIsAlwaysKnown": "main",
+		"WantedPages::getQueryInfo": "main"
 	},
 	"HookHandlers": {
 		"main": {
