@@ -14,7 +14,7 @@
 		]
 	},
 	"requires": {
-		"MediaWiki": ">= 1.43.0"
+		"MediaWiki": ">= 1.44.0"
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\UTDRTweaks\\": "includes/"

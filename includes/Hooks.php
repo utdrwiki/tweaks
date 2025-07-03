@@ -2,12 +2,12 @@
 namespace MediaWiki\Extension\UTDRTweaks;
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\FileRepo\File;
 use MediaWiki\Hook\ImageBeforeProduceHTMLHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Parser\Parser;
+use MediaWiki\Skin\Skin;
 use MediaWiki\Title\Title;
-use Skin;
-use File;
 
 class Hooks implements ImageBeforeProduceHTMLHook {
 	private const CAPTION_REQUIRED_MEDIA_TYPES = [
