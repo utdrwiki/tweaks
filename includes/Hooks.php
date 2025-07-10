@@ -162,9 +162,7 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 	public static function onGetLocalURL( $title, &$url, $query ) {
 		global $wgArticlePath, $wgScript, $wgScriptPath;
 		$dbkey = wfUrlencode( $title->getPrefixedDBkey() );
-		if ( $title->isMainPage() ) {
-			$url = wfAppendQuery( $wgScriptPath . '/', $query );
-		} elseif ( $url == "{$wgScript}?title={$dbkey}&{$query}" ) {
+		if ( $url == "{$wgScript}?title={$dbkey}&{$query}" ) {
 			$url = wfAppendQuery( str_replace( '$1', $dbkey, $wgArticlePath ), $query );
 		}
 	}
