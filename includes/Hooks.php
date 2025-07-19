@@ -114,22 +114,22 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 		}
 	}
 
-	  /**
-     * Changes the selflink to a span instead of a link, since it's not actually
-     * a link.
-     * @param \MediaWiki\Title\Title $nt Title object that the link leads to
-     * @param mixed $html HTML output of the link
-     * @param mixed $trail Trailing HTML
-     * @param mixed $prefix Prefix HTML
-     * @param mixed $ret Return value
-     * @return bool False to stop processing
-     */
-    public static function onSelfLinkBegin( Title $nt, &$html, &$trail, &$prefix, &$ret ): bool {
-        $ret = Html::rawElement( 'span', [
-            'class' => 'mw-selflink selflink'
-        ], $prefix . $html ) . $trail;
-        return false;
-    }
+	/**
+	 * Changes the selflink to a span instead of a link, since it's not actually
+	 * a link.
+	 * @param \MediaWiki\Title\Title $nt Title object that the link leads to
+	 * @param mixed $html HTML output of the link
+	 * @param mixed $trail Trailing HTML
+	 * @param mixed $prefix Prefix HTML
+	 * @param mixed $ret Return value
+	 * @return bool False to stop processing
+	 */
+	public static function onSelfLinkBegin( Title $nt, &$html, &$trail, &$prefix, &$ret ): bool {
+		$ret = Html::rawElement( 'span', [
+			'class' => 'mw-selflink selflink'
+		], $prefix . $html ) . $trail;
+		return false;
+	}
 
 
 	/**
