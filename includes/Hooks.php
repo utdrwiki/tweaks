@@ -2,6 +2,7 @@
 namespace MediaWiki\Extension\UTDRTweaks;
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Config\Config;
 use MediaWiki\Hook\ImageBeforeProduceHTMLHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Parser\Parser;
@@ -165,5 +166,20 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 		if ( $url == "{$wgScript}?title={$dbkey}&{$query}" ) {
 			$url = wfAppendQuery( str_replace( '$1', $dbkey, $wgArticlePath ), $query );
 		}
+	}
+
+	/**
+	 * Remove "== Summary ==" from initial file page text.
+	 * @param string $pageText
+	 * @param array $msg Array of header messages
+	 * @param Config $config
+	 * @return void
+	 */
+	public static function onUploadForm_getInitialPageText( string &$pageText, array $msg, Config $config ) {
+		$pageText = str_replace(
+			"== {$msg['filedesc']} ==\n",
+			'',
+			$pageText
+		);
 	}
 }

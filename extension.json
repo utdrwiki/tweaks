@@ -49,6 +49,7 @@
 		"ImageBeforeProduceHTML": "main",
 		"SelfLinkBegin": "main",
 		"TitleIsAlwaysKnown": "main",
+		"UploadForm:getInitialPageText": "main",
 		"WantedPages::getQueryInfo": "main",
 		"GetLocalURL": "main"
 	},
