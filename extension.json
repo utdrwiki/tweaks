@@ -45,9 +45,11 @@
 	"Hooks": {
 		"AuthChangeFormFields": "main",
 		"BeforeCreateEchoEvent": "main",
+		"ContentModelCanBeUsedOn": "main",
 		"SkinAddFooterLinks": "main",
 		"ImageBeforeProduceHTML": "main",
 		"SelfLinkBegin": "main",
+		"TemplateStylesStylesheetSanitizer": "main",
 		"TitleIsAlwaysKnown": "main",
 		"UploadForm:getInitialPageText": "main",
 		"WantedPages::getQueryInfo": "main",

@@ -9,6 +9,9 @@ use MediaWiki\Parser\Parser;
 use MediaWiki\Title\Title;
 use Skin;
 use File;
+use Wikimedia\CSS\Grammar\MatcherFactory;
+use Wikimedia\CSS\Sanitizer\StylesheetSanitizer;
+use Wikimedia\CSS\Sanitizer\StylePropertySanitizer;
 
 class Hooks implements ImageBeforeProduceHTMLHook {
 	private const CAPTION_REQUIRED_MEDIA_TYPES = [
@@ -181,5 +184,33 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 			'',
 			$pageText
 		);
+	}
+
+	/**
+	 * Prevents the TemplateStyles content model from being used outside of
+	 * the MediaWiki namespace, because it is completely unrestricted in our
+	 * implementation.
+	 * @param mixed $modelId Content mode ID
+	 * @param Title $title Title object of the page being edited
+	 * @param mixed $ok Whether the content model can be used
+	 * @return void|bool False to abort further processing
+	 */
+	public static function onContentModelCanBeUsedOn( $modelId, Title $title, &$ok ) {
+		if ( $modelId === 'sanitized-css' && $title->getNamespace() !== NS_MEDIAWIKI ) {
+			$ok = false;
+			return false;
+		}
+	}
+
+	/**
+	 * Replace TemplateStyles's sanitizer with a no-op sanitizer.
+	 * @param StylesheetSanitizer $sanitizer
+	 * @param StylePropertySanitizer $propertySanitizer
+	 * @param MatcherFactory $matcherFactory
+	 * @return false To abort further processing
+	 */
+	public static function onTemplateStylesStylesheetSanitizer( StylesheetSanitizer &$sanitizer, StylePropertySanitizer $propertySanitizer, MatcherFactory $matcherFactory ): bool {
+		$sanitizer = new NoopStylesheetSanitizer();
+		return false;
 	}
 }
