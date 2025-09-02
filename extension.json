@@ -49,6 +49,7 @@
 		"SkinAddFooterLinks": "main",
 		"ImageBeforeProduceHTML": "main",
 		"SelfLinkBegin": "main",
+		"SidebarBeforeOutput": "main",
 		"TemplateStylesStylesheetSanitizer": "main",
 		"TitleIsAlwaysKnown": "main",
 		"UploadForm:getInitialPageText": "main",

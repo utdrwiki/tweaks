@@ -213,4 +213,16 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 		$sanitizer = new NoopStylesheetSanitizer();
 		return false;
 	}
+
+	/**
+	 * Remove Bucket's sidebar link.
+	 * @param Skin $skin
+	 * @param array &$sidebar
+	 */
+	public function onSidebarBeforeOutput( $skin, &$sidebar ): void {
+		$sidebar['TOOLBOX'] = array_filter(
+			$sidebar['TOOLBOX'],
+			fn( $item ) => $item['id'] !== 'n-bucket'
+		);
+	}
 }
