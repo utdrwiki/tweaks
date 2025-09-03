@@ -1,12 +1,12 @@
 <?php
 namespace MediaWiki\Extension\UTDRTweaks\FileRepo;
 
-use MediaWiki\FileRepo\File\LocalFile;
+use MediaWiki\FileRepo\File\ForeignDBFile;
 
 /**
- * Custom LocalFile class adding cache buster parameters to file URLs.
+ * Custom ForeignDBFile class adding cache buster parameters to file URLs.
  */
-class UTDRLocalFile extends LocalFile {
+class UTDRForeignDBFile extends ForeignDBFile {
 	use CachedFileTrait;
 
 	/**
@@ -15,7 +15,7 @@ class UTDRLocalFile extends LocalFile {
 	 * @param mixed $repo
 	 */
 	public function __construct( $title, $repo ) {
-		$this->repoClass = UTDRLocalRepo::class;
+		$this->repoClass = UTDRForeignDBRepo::class;
 		parent::__construct( $title, $repo );
 	}
 }

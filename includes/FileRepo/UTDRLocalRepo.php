@@ -1,7 +1,7 @@
 <?php
 namespace MediaWiki\Extension\UTDRTweaks\FileRepo;
 
-use LocalRepo;
+use MediaWiki\FileRepo\LocalRepo;
 
 /**
  * Custom LocalRepo class adding cache buster parameters to file URLs.
