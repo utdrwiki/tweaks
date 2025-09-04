@@ -18,9 +18,9 @@
 	"grouppage-content-moderator": "Project:Staff#Moderators",
 	"group-content-moderator": "Moderators",
 	"group-content-moderator-member": "moderator",
-	"grouppage-site-admin": "Project:Staff#Site administrators",
-	"group-site-admin": "Site administrators",
-	"group-site-admin-member": "site administrator",
+	"grouppage-infra": "Project:Staff#Infrastructure team",
+	"group-infra": "Infrastructure team",
+	"group-infra-member": "infrastructure team",
 	"grouppage-trusted": "Project:Users#Trusted users",
 	"group-trusted": "Trusted users",
 	"group-trusted-member": "trusted user"

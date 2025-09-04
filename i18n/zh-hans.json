@@ -19,9 +19,9 @@
 	"grouppage-content-moderator": "Project:Staff#内容管理员",
 	"group-content-moderator": "内容管理员",
 	"group-content-moderator-member": "内容管理员",
-	"grouppage-site-admin": "Project:Staff#站点管理员",
-	"group-site-admin": "站点管理员",
-	"group-site-admin-member": "站点管理员",
+	"grouppage-infra": "Project:Staff#站点管理员",
+	"group-infra": "站点管理员",
+	"group-infra-member": "站点管理员",
 	"grouppage-trusted": "Project:Users#受信用户",
 	"group-trusted": "受信用户",
 	"group-trusted-member": "受信用户"

@@ -19,9 +19,9 @@
 	"grouppage-content-moderator": "Project:Staff#版主",
 	"group-content-moderator": "版主",
 	"group-content-moderator-member": "版主",
-	"grouppage-site-admin": "Project:Staff#網站管理員",
-	"group-site-admin": "網站管理員",
-	"group-site-admin-member": "網站管理員",
+	"grouppage-infra": "Project:Staff#網站管理員",
+	"group-infra": "網站管理員",
+	"group-infra-member": "網站管理員",
 	"grouppage-trusted": "Project:Users#可信用戶",
 	"group-trusted": "可信用戶",
 	"group-trusted-member": "可信用戶"
