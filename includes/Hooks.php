@@ -164,7 +164,7 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 	 * Taken from GloopTweaks, by TehKittyCat and Jayden.
 	 */
 	public static function onGetLocalURL( $title, &$url, $query ) {
-		global $wgArticlePath, $wgScript, $wgScriptPath;
+		global $wgArticlePath, $wgScript;
 		$dbkey = wfUrlencode( $title->getPrefixedDBkey() );
 		if ( $url == "{$wgScript}?title={$dbkey}&{$query}" ) {
 			$url = wfAppendQuery( str_replace( '$1', $dbkey, $wgArticlePath ), $query );
@@ -224,5 +224,20 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 			$sidebar['TOOLBOX'],
 			fn( $item ) => $item['id'] !== 'n-bucket'
 		);
+	}
+
+	/**
+	 * Purges the recent changes URLs used by the sidebar gadget on the CDN.
+	 * @param Title $title The title of the page that was updated
+	 * @param int $mode Whether this was a result of a LinksUpdate
+	 * @param array &$urls Array of URLs to be purged
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/HtmlCacheUpdaterAppendUrls
+	 */
+	public static function onHtmlCacheUpdaterAppendUrls( Title $title, int $mode, array &$urls ): void {
+		if ( $title->getNamespace() === NS_MAIN && $mode === 0 ) {
+			global $wgServer, $wgScriptPath;
+			$urls[] = "$wgServer$wgScriptPath/api.php?action=query&format=json&list=recentchanges&rcprop=title%7Cids%7Cuser%7Cuserid%7Ctimestamp&rclimit=50&rcshow=!bot&rctype=new%7Cedit&rcnamespace=0";
+			$urls[] = "$wgServer$wgScriptPath/api.php?action=query&format=json&generator=recentchanges&grcnamespace=0&grclimit=50&grcshow=!bot&prop=pageimages%7Cinfo&inprop=displaytitle";
+		}
 	}
 }

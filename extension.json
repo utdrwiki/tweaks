@@ -47,6 +47,7 @@
 		"BeforeCreateEchoEvent": "main",
 		"ContentModelCanBeUsedOn": "main",
 		"SkinAddFooterLinks": "main",
+		"HtmlCacheUpdaterAppendUrls": "main",
 		"ImageBeforeProduceHTML": "main",
 		"SelfLinkBegin": "main",
 		"SidebarBeforeOutput": "main",
