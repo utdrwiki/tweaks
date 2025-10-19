@@ -228,7 +228,7 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 	public function onSidebarBeforeOutput( $skin, &$sidebar ): void {
 		$sidebar['TOOLBOX'] = array_filter(
 			$sidebar['TOOLBOX'],
-			fn( $item ) => $item['id'] !== 'n-bucket'
+			fn( $item ) => !isset( $item['id'] ) || $item['id'] !== 'n-bucket'
 		);
 	}
 
