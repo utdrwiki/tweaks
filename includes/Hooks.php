@@ -3,12 +3,18 @@ namespace MediaWiki\Extension\UTDRTweaks;
 
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\Config;
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\UTDRTweaks\Interwiki\UTDRInterwikiLookup;
 use MediaWiki\FileRepo\File;
 use MediaWiki\Hook\ImageBeforeProduceHTMLHook;
 use MediaWiki\Html\Html;
+use MediaWiki\Interwiki\ClassicInterwikiLookup;
+use MediaWiki\Interwiki\InterwikiLookup;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Skin\Skin;
 use MediaWiki\Title\Title;
+use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\CSS\Grammar\MatcherFactory;
 use Wikimedia\CSS\Sanitizer\StylesheetSanitizer;
 use Wikimedia\CSS\Sanitizer\StylePropertySanitizer;
@@ -239,5 +245,22 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 			$urls[] = "$wgServer$wgScriptPath/api.php?action=query&format=json&list=recentchanges&rcprop=title%7Cids%7Cuser%7Cuserid%7Ctimestamp&rclimit=50&rcshow=!bot&rctype=new%7Cedit&rcnamespace=0";
 			$urls[] = "$wgServer$wgScriptPath/api.php?action=query&format=json&generator=recentchanges&grcnamespace=0&grclimit=50&grcshow=!bot&prop=pageimages%7Cinfo&inprop=displaytitle";
 		}
+	}
+
+	public function onMediaWikiServices( MediaWikiServices $services ): void {
+		$services->redefineService( 'InterwikiLookup', fn (
+			MediaWikiServices $services
+		): InterwikiLookup => new UTDRInterwikiLookup(
+			new ServiceOptions(
+				ClassicInterwikiLookup::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig(),
+				[ 'wikiId' => WikiMap::getCurrentWikiId() ],
+			),
+			$services->getContentLanguage(),
+			$services->getMainWANObjectCache(),
+			$services->getHookContainer(),
+			$services->getConnectionProvider(),
+			$services->getLanguageNameUtils()
+		) );
 	}
 }

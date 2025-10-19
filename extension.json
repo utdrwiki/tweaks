@@ -49,6 +49,7 @@
 		"SkinAddFooterLinks": "main",
 		"HtmlCacheUpdaterAppendUrls": "main",
 		"ImageBeforeProduceHTML": "main",
+		"MediaWikiServices": "main",
 		"SelfLinkBegin": "main",
 		"SidebarBeforeOutput": "main",
 		"TemplateStylesStylesheetSanitizer": "main",
