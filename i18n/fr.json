@@ -1,0 +1,27 @@
+{
+    "@metadata": {
+        "authors": [
+            "Kahene"
+        ]
+    },
+    "analyticsoptout": "Se désinscrire des analyses et collectes de données",
+    "utdr-category-pages-without-captions": "Pages avec légendes de fichiers manquantes",
+    "utdr-category-pages-without-captions-desc": "Ces pages contiennent des fichiers dont les légendes ne sont pas définies, que ce soit dans les galeries ou séparément. Voir [[mw:Special:MyLanguage/Help:Images|la page d'aide sur les images]] pour savoir comment ajouter des légendes à ces fichiers.",
+    "utdr-desc": "Ajustements apportés à MediaWiki pour les wikis Undertale et Deltarune.",
+    "utdr-accept-tos": "<span>Je déclare avoir plus de 13 ans et j'accepte les [[meta:Terms of Service|Conditions générales d'utilisation]] et la [[meta:Privacy Policy|Politique de confidentialité]].</span>",
+    "utdr-optout": "Je souhaite refuser que mes données soient collectées à des fins d'analyse.",
+    "utdr-optout-error": "Une erreur s'est produite lors de la mise à jour de vos préférences d'analyse. Si vous utilisez des bloqueurs de contenu ou de publicités pour bloquer notre script d'analyse, c'est parfait ! Vous avez déjà choisi de ne pas participer, puisque notre analyse ne se charge jamais sur votre appareil. Mais si vous souhaitez que votre refus soit plus explicite, veuillez désactiver votre bloqueur de contenu ou de publicités et essayer à nouveau de mettre à jour vos préférences.",
+    "utdr-optout-success": "Vous avez mis à jour vos préférences analytiques avec succès.",
+    "utdr-optout-message": "Vous pouvez cocher cette case pour refuser que vos données soient collectées à des fins d'analyse. Les analyses nous aident à déterminer comment les utilisateurs utilisent notre site web et à hiérarchiser les efforts de modification et de développement, mais nous comprenons tout à fait que vous souhaitiez vous désinscrire. Vous pouvez modifier ce paramètre à tout moment. \n\nSi vous utilisez un bloqueur de contenu ou de publicités qui bloque notre script d'analyse, le fait de vous désinscrire à l'aide de ce formulaire ne fonctionnera pas. Cependant, cela signifie que vous êtes déjà implicitement désinscrit. \n\n'''Vous devez vous désinscrire sur les wikis Undertale et Deltarune séparément.''' Liens vers chaque page de désinscription:\n* {{#interwikilink:ut|Special:AnalyticsOptOut|Undertale Wiki}}\n* {{#interwikilink:dr|Special:AnalyticsOptOut|Deltarune Wiki}}",
+    "utdr-terms-of-service": "Conditions d'utilisation",
+    "utdr-privacy-policy": "Politique de confidentialité",
+    "grouppage-content-moderator": "Project:Équipe#Modérateurs",
+    "group-content-moderator": "Modérateurs",
+    "group-content-moderator-member": "modérateur",
+    "grouppage-infra": "Project:Équipe#Équipe d'infrastructure",
+    "group-infra": "Équipe d'infrastructure",
+    "group-infra-member": "équipe d'infrastructure",
+    "grouppage-trusted": "Project:Utilisateurs#Utilisateurs vérifiés",
+    "group-trusted": "Utilisateurs vérifiés",
+    "group-trusted-member": "Utilisateur vérifié"
+}
