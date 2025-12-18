@@ -47,20 +47,37 @@ class UTDRInterwikiLookup extends ClassicInterwikiLookup {
 		if ( $local === true ) {
 			return $data;
 		}
-		return array_merge(
-			$data,
-			$this->getPrefixesFromVirtualDomain( 'virtual-interwiki', false ),
-			$this->getPrefixesFromVirtualDomain( 'virtual-interwiki-interlanguage', true ),
-		);
+		$prefixSet = [];
+		foreach ( $row as $data ) {
+			$prefixSet[$data['iw_prefix']] = true;
+		}
+		return [
+			...$data,
+			...$this->getPrefixesFromVirtualDomain(
+				'virtual-interwiki',
+				false,
+				$prefixSet
+			),
+			...$this->getPrefixesFromVirtualDomain(
+				'virtual-interwiki-interlanguage',
+				true,
+				$prefixSet
+			),
+		];
 	}
 	/**
 	 * Retrieves interwiki prefixes from a virtual domain.
 	 * @param string $virtualDomain Virtual domain
 	 * @param bool $shouldBeLanguage Whether to filter for language interwikis
+	 * @param array $prefixSet Set of already known prefixes
 	 * @return array[]
 	 * @see SpecialInterwiki::showList()
 	 */
-	private function getPrefixesFromVirtualDomain( string $virtualDomain, bool $shouldBeLanguage ): array {
+	private function getPrefixesFromVirtualDomain(
+		string $virtualDomain,
+		bool $shouldBeLanguage,
+		array $prefixSet
+	): array {
 		$virtualDomainsMapping = $this->options->get( MainConfigNames::VirtualDomainsMapping );
 		if ( !isset( $virtualDomainsMapping[$virtualDomain] ) ) {
 			return [];
@@ -77,7 +94,7 @@ class UTDRInterwikiLookup extends ClassicInterwikiLookup {
 			$row = (array)$row;
 			$isLanguage = $this->options->get( MainConfigNames::InterwikiMagic ) &&
 			              $this->languageNameUtils->getLanguageName( $row['iw_prefix'] );
-			if ( $isLanguage === $shouldBeLanguage ) {
+			if ( $isLanguage === $shouldBeLanguage && !isset( $prefixSet[$row['iw_prefix']] ) ) {
 				$prefixes[] = $row;
 			}
 		}
