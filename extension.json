@@ -43,6 +43,7 @@
 		"AuthChangeFormFields": "main",
 		"BeforeCreateEchoEvent": "main",
 		"ContentModelCanBeUsedOn": "main",
+		"EditFilterMergedContent": "main",
 		"SkinAddFooterLinks": "main",
 		"HtmlCacheUpdaterAppendUrls": "main",
 		"ImageBeforeProduceHTML": "main",
@@ -61,6 +62,12 @@
 		}
 	},
 	"config_prefix": "wgUTDR",
-	"config": {},
+	"config": {
+		"BlockedEmailRegex": {
+			"description": "Regular expression determining which emails are blocked from the wiki",
+			"value": null,
+			"public": false
+		}
+	},
 	"manifest_version": 2
 }

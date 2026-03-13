@@ -4,6 +4,9 @@ namespace MediaWiki\Extension\UTDRTweaks;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Content\Content;
+use MediaWiki\Context\IContextSource;
+use MediaWiki\Extension\AbuseFilter\FilterUser;
 use MediaWiki\Extension\UTDRTweaks\Interwiki\UTDRInterwikiLookup;
 use MediaWiki\FileRepo\File;
 use MediaWiki\Hook\ImageBeforeProduceHTMLHook;
@@ -13,7 +16,9 @@ use MediaWiki\Interwiki\InterwikiLookup;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Skin\Skin;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\CSS\Grammar\MatcherFactory;
 use Wikimedia\CSS\Sanitizer\StylesheetSanitizer;
@@ -253,5 +258,27 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 			$services->getConnectionProvider(),
 			$services->getLanguageNameUtils()
 		) );
+	}
+
+	public function onEditFilterMergedContent( IContextSource $context, Content $content, Status $status, string $summary, User $user, bool $minoredit ): bool {
+		$blockedEmailRegex = $context->getConfig()->get( 'UTDRBlockedEmailRegex' );
+		if ( !$blockedEmailRegex || !preg_match( $blockedEmailRegex, $user->getEmail() ) ) {
+			return true;
+		}
+		$status->fatal( 'abusefilter-disallowed', 'Vandalism' );
+		$services = MediaWikiServices::getInstance();
+		$services->getBlockUserFactory()->newBlockUser(
+			$user,
+			$services->getService( FilterUser::SERVICE_NAME )->getAuthority(),
+			'infinite',
+			'Vandalism',
+			[
+				'isHardBlock' => true,
+				'isAutoblocking' => true,
+				'isCreateAccountBlocked' => true,
+				'isUserTalkEditBlocked' => true,
+			]
+		)->placeBlockUnsafe();
+		return false;
 	}
 }
