@@ -48,8 +48,8 @@ class UTDRInterwikiLookup extends ClassicInterwikiLookup {
 			return $data;
 		}
 		$prefixSet = [];
-		foreach ( $row as $data ) {
-			$prefixSet[$data['iw_prefix']] = true;
+		foreach ( $data as $row ) {
+			$prefixSet[$row['iw_prefix']] = true;
 		}
 		return [
 			...$data,
