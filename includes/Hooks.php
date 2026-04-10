@@ -8,6 +8,7 @@ use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\AbuseFilter\FilterUser;
 use MediaWiki\Extension\UTDRTweaks\Interwiki\UTDRInterwikiLookup;
+use MediaWiki\Extension\UTDRTweaks\Preferences\UTDRPreferencesFactory;
 use MediaWiki\FileRepo\File;
 use MediaWiki\Hook\ImageBeforeProduceHTMLHook;
 use MediaWiki\Html\Html;
@@ -15,6 +16,8 @@ use MediaWiki\Interwiki\ClassicInterwikiLookup;
 use MediaWiki\Interwiki\InterwikiLookup;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\Parser;
+use MediaWiki\Preferences\DefaultPreferencesFactory;
+use MediaWiki\Preferences\PreferencesFactory;
 use MediaWiki\Skin\Skin;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
@@ -257,6 +260,29 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 			$services->getHookContainer(),
 			$services->getConnectionProvider(),
 			$services->getLanguageNameUtils()
+		) );
+		$services->redefineService( 'PreferencesFactory', fn (
+			MediaWikiServices $services
+		): PreferencesFactory => new UTDRPreferencesFactory(
+			$services->getMainConfig()->get( 'UTDRSupportedLanguages' ),
+			new ServiceOptions(
+				DefaultPreferencesFactory::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			),
+			$services->getContentLanguage(),
+			$services->getAuthManager(),
+			$services->getLinkRendererFactory()->create(),
+			$services->getNamespaceInfo(),
+			$services->getPermissionManager(),
+			$services->getLanguageConverterFactory()->getLanguageConverter(),
+			$services->getLanguageNameUtils(),
+			$services->getHookContainer(),
+			$services->getUserOptionsManager(),
+			$services->getLanguageConverterFactory(),
+			$services->getParserFactory(),
+			$services->getSkinFactory(),
+			$services->getUserGroupManager(),
+			$services->getSignatureValidatorFactory()
 		) );
 	}
 

@@ -67,6 +67,11 @@
 			"description": "Regular expression determining which emails are blocked from the wiki",
 			"value": null,
 			"public": false
+		},
+		"SupportedLanguages": {
+			"description": "List of languages to limit support to",
+			"value": null,
+			"public": true
 		}
 	},
 	"manifest_version": 2
