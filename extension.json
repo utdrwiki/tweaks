@@ -74,5 +74,8 @@
 			"public": true
 		}
 	},
+	"ParsoidModules": [
+		"MediaWiki\\Extension\\UTDRTweaks\\Parsoid\\UTDRParsoidModule"
+	],
 	"manifest_version": 2
 }
