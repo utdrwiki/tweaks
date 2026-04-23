@@ -42,7 +42,6 @@
 	"Hooks": {
 		"AuthChangeFormFields": "main",
 		"BeforeCreateEchoEvent": "main",
-		"ContentModelCanBeUsedOn": "main",
 		"EditFilterMergedContent": "main",
 		"SkinAddFooterLinks": "main",
 		"HtmlCacheUpdaterAppendUrls": "main",
@@ -50,7 +49,6 @@
 		"MediaWikiServices": "main",
 		"SelfLinkBegin": "main",
 		"SidebarBeforeOutput": "main",
-		"TemplateStylesStylesheetSanitizer": "main",
 		"TitleIsAlwaysKnown": "main",
 		"UploadForm:getInitialPageText": "main",
 		"WantedPages::getQueryInfo": "main",
