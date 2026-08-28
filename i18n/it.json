@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"KnuckleBuckle"
+		]
+	},
+	"analyticsoptout": "Disattiva i dati analitici",
+	"utdr-category-pages-without-captions": "Pagine con didascalie ai file mancanti",
+	"utdr-category-pages-without-captions-desc": "Queste pagine includono file a cui non sono stati impostati didascalie, o all'interno di gallerie o caricati separatamente. Vedi [https://www.mediawiki.org/wiki/Help:Images/it la pagina Help:Immagini] per vedere come aggiungere didascalie a questi file.",
+	"utdr-desc": "Modifiche a MediaWiki per le wiki di Undertale e Deltarune.",
+	"utdr-accept-tos": "<span>Confermo di avere più di 13 anni di età e acconsento ai [[meta:Terms of Service|Termini di Servizio]] e all'[[meta:Privacy Policy|Informativa sulla Privacy]].</span>",
+	"utdr-optout": "Voglio impedire che i miei dati vengano raccolti per fini analitici.",
+	"utdr-optout-error": "C'è stato un errore nell'aggiornamento delle tue preferenze per i dati analitici. Se stai utilizzando estensioni per il blococ dei contenuti relativi ai dati analitici, bene! Hai già disattivato i ddati analitici poiché essi non verranno mai caricati sul tuo dispositivo. Ma se vuoi una misura più drastica, disabilita le tue estensioni e aggiorna nuovamente le tue preferenze.",
+	"utdr-optout-success": "Hai aggiornato con successo le tue preferenze per i dati analitici.",
+	"utdr-optout-message": "Puoi selezionare questa casella per disattivare la raccolta di dati per fini analitici. I dati analitici ci aiutano a determinare come gli utenti adoperano il sito e stabiliscono le priorità nelle modifiche e sviluppo delle pagine, ma comprendiamo pienamente se volete disattivarli. Puoi cambiare quest'impostazione in qualsiasi momento.\n\nSe hai un estensione per bloccare i contenuti relativi ai dati analitici, non potranno essere disattivati con questo modulo. Tuttavia vuol dire che li avrai già disattivati di base.\n\n'''Devi disattivare separatamente i dati relativi alle rispettive wiki di Undertale e Deltarune.''' Links a ciascuna pagina per la disattivazione:\n* {{#interwikilink:ut|Special:AnalyticsOptOut|Undertale Wiki}}\n* {{#interwikilink:dr|Special:AnalyticsOptOut|Deltarune Wiki}}",
+	"utdr-terms-of-service": "Termini di Servizio",
+	"utdr-privacy-policy": "Informativa sulla Privacy",
+	"grouppage-content-moderator": "meta:Staff#Moderators",
+	"group-content-moderator": "Moderatori",
+	"group-content-moderator-member": "moderatore/trice",
+	"grouppage-discussions-moderator": "meta:Staff#Discussions moderators",
+	"group-discussions-moderator": "Disccussioni della moderazione",
+	"group-discussions-moderator-member": "Discussioni moderatore/trice",
+	"grouppage-infra": "meta:Staff#Infrastructure team",
+	"group-infra": "Team dedicato all'infrastruttura del sito",
+	"group-infra-member": "team dedicato all'infrastruttura del sito",
+	"grouppage-trusted": "meta:Users#Trusted users",
+	"group-trusted": "Utenti fidati",
+	"group-trusted-member": "utente fidato"
+}
