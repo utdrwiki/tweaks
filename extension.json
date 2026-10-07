@@ -13,6 +13,10 @@
 			"i18n"
 		]
 	},
+	"ExtensionMessagesFiles": {
+		"UTDRTweaksAliases": "i18n/Aliases.php",
+		"UTDRTweaksNamespaces": "i18n/Namespaces.php"
+	},
 	"requires": {
 		"MediaWiki": ">= 1.44.0"
 	},
@@ -42,6 +46,7 @@
 	"Hooks": {
 		"AuthChangeFormFields": "main",
 		"BeforeCreateEchoEvent": "main",
+		"CanonicalNamespaces": "main",
 		"EditFilterMergedContent": "main",
 		"SkinAddFooterLinks": "main",
 		"HtmlCacheUpdaterAppendUrls": "main",
@@ -63,15 +68,33 @@
 	"config": {
 		"BlockedEmailRegex": {
 			"description": "Regular expression determining which emails are blocked from the wiki",
-			"value": null,
-			"public": false
+			"value": null
+		},
+		"DraftNamespace": {
+			"description": "Whether to add a Draft namespace to the wiki",
+			"value": true
 		},
 		"SupportedLanguages": {
 			"description": "List of languages to limit support to",
-			"value": null,
-			"public": true
+			"value": null
 		}
 	},
+	"namespaces": [
+		{
+			"id": 100,
+			"constant": "NS_DRAFT",
+			"name": "Draft",
+			"subpages": true,
+			"conditional": true
+		},
+		{
+			"id": 101,
+			"constant": "NS_DRAFT_TALK",
+			"name": "Draft_talk",
+			"subpages": true,
+			"conditional": true
+		}
+	],
 	"ParsoidModules": [
 		"MediaWiki\\Extension\\UTDRTweaks\\Parsoid\\UTDRParsoidModule"
 	],

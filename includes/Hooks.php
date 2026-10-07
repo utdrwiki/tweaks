@@ -10,6 +10,7 @@ use MediaWiki\Extension\AbuseFilter\FilterUser;
 use MediaWiki\Extension\UTDRTweaks\Interwiki\UTDRInterwikiLookup;
 use MediaWiki\Extension\UTDRTweaks\Preferences\UTDRPreferencesFactory;
 use MediaWiki\FileRepo\File\File;
+use MediaWiki\Hook\CanonicalNamespacesHook;
 use MediaWiki\Hook\ImageBeforeProduceHTMLHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Interwiki\ClassicInterwikiLookup;
@@ -24,7 +25,10 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 
-class Hooks implements ImageBeforeProduceHTMLHook {
+class Hooks implements
+	CanonicalNamespacesHook,
+	ImageBeforeProduceHTMLHook
+{
 	private const CAPTION_REQUIRED_MEDIA_TYPES = [
 		MEDIATYPE_BITMAP,
 		MEDIATYPE_DRAWING,
@@ -212,6 +216,18 @@ class Hooks implements ImageBeforeProduceHTMLHook {
 			global $wgServer, $wgScriptPath;
 			$urls[] = "$wgServer$wgScriptPath/api.php?action=query&format=json&list=recentchanges&rcprop=title%7Cids%7Cuser%7Cuserid%7Ctimestamp&rclimit=50&rcshow=!bot&rctype=new%7Cedit&rcnamespace=0";
 			$urls[] = "$wgServer$wgScriptPath/api.php?action=query&format=json&generator=recentchanges&grcnamespace=0&grclimit=50&grcshow=!bot&prop=pageimages%7Cinfo&inprop=displaytitle";
+		}
+	}
+
+	/**
+	 * Conditionally adds a Draft namespace to the wiki.
+	 * @param string[] &$namespaces Array of namespace numbers with corresponding canonical names
+	 * @return bool|void True or no return value to continue or false to abort
+	 */
+	public function onCanonicalNamespaces( &$namespaces ) {
+		if ( MediaWikiServices::getInstance()->getMainConfig()->get( 'UTDRDraftNamespace' ) ) {
+			$namespaces[100] = 'Draft';
+			$namespaces[101] = 'Draft_talk';
 		}
 	}
 
